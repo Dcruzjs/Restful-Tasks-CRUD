@@ -1,0 +1,18 @@
+<h3>Tasks's List</h3>
+<ul *ngIf= " tasks$ | async as tasks">
+  <ng-template [ngIf]=" tasks.tasks.length > 0" [ngIfElse]="loading">
+    <div *ngFor="let task of tasks.tasks; index as i">
+      <li >
+        <p>{{i + 1 +". "+task.title}} - <a [routerLink]="['/edit-task',task._id]" >Edit</a></p>
+        <p>{{task.description}}</p>
+        
+        
+      </li>
+    </div>
+  </ng-template>
+  
+  <ng-template #loading>
+    <div>There are no tasks to show...</div>
+  </ng-template>
+
+</ul>

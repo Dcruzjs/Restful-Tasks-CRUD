@@ -19,6 +19,8 @@ export class TaskListComponent implements OnInit {
     // this.getTasks()
   }
 
+  taskToShow$: Observable<TaskResp> | undefined;
+  
   deleteTask($event:any):void{
     console.log($event.target.id)
     this.taskService.deleteTask($event.target.id)
@@ -27,5 +29,11 @@ export class TaskListComponent implements OnInit {
 
   ngOnInit(): void {
     this.tasks$ = this.taskService.getTasks()
+  }
+
+  getTask($event:any){
+    console.log($event.target.id)
+    this.taskToShow$ = this.taskService.getTask($event.target.id)
+
   }
 }

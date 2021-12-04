@@ -2,13 +2,17 @@
 <ul *ngIf= " tasks$ | async as tasks">
   <ng-template [ngIf]=" tasks.tasks.length > 0" [ngIfElse]="noTasks">
     <div  *ngFor="let task of tasks.tasks;">
-
-      <app-task [task]="task"></app-task>
+      <div>{{task.title}} - <button id="{{task._id}}" (click)="getTask($event)">Show</button></div> 
     </div>
   </ng-template>
   
   <ng-template #noTasks>
     <div>There are no tasks to show...</div>
   </ng-template>
-
+  
 </ul>
+
+<div *ngIf="taskToShow$ | async as taskToShow">
+
+  <app-task [task]="taskToShow.task"></app-task>
+</div>

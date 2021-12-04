@@ -8,8 +8,8 @@ export interface TaskResp {
 export interface TaskResponse {
     _id:         string;
     title:       string;
-    description: string;
-    completed:   string;
+    description?: string;
+    completed?:   string;
     createdAt?:   Date;
     updatedAt?:   Date;
     __v?:         number;

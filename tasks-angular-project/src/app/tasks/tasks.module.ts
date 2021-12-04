@@ -8,6 +8,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { TaskService } from './task.service';
 import { AppRoutingModule } from '../app-routing.module';
 import { EditTaskComponent } from './edit-task/edit-task.component';
+import { TaskComponent } from './task/task.component';
 
 
 
@@ -17,6 +18,7 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
     TaskListComponent,
     TaskFormComponent,
     EditTaskComponent,
+    TaskComponent,
   ],
   imports: [
     CommonModule,

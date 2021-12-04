@@ -10,10 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './task-list.component.html',
 })
 export class TaskListComponent implements OnInit {
-  task:Task ={
-    title: "",
-    description:""
-  }
+  
   tasks$: Observable<TasksResp> | undefined;
   constructor(
     private taskService:TaskService,
@@ -21,15 +18,6 @@ export class TaskListComponent implements OnInit {
     private _route:ActivatedRoute) { 
     // this.getTasks()
   }
-
-  // getTasks():void{
-    
-  //   const tasks = this.taskService.getTasks()
-  //   tasks.subscribe((resp:TasksResp) => {
-  //     this.tasks = resp.tasks
-  //     console.log(this.tasks)
-  //   })
-  // }
 
   deleteTask($event:any):void{
     console.log($event.target.id)
